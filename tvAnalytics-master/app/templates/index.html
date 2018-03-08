@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Overview</h2>
+  {% if g.user %}
+  <p>
+    Hello {{ g.user.name }}!
+    <br>
+    List of Tv Series that you have are :-
+    <br>
+    <ul>
+    	{% for show in g.user.series.split(',') %}
+    		<li> {{show}} </li>
+  		{% endfor %}
+    </ul>
+  {% endif %}
+  <p>
+    This is just an example page so that something is here.
+{% endblock %}
